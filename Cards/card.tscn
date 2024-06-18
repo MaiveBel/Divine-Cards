@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bgbrwbuatgdob" path="res://Cards/card_base.tscn" id="1_stp3p"]
 
 [node name="Card" type="Node2D" groups=["CardPosManager"]]
-scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ey8rh")
 
 [node name="CardBase" parent="." instance=ExtResource("1_stp3p")]
