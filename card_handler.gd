@@ -7,7 +7,7 @@ const cardBase = preload("res://Cards/card.tscn")
 @export var draw_timer:Timer
 @export var card_pos_timer:Timer
 
-@export var hand_size = 250
+@export var hand_width = 250
 
 #draw size
 @export var drawSize = 5
@@ -56,9 +56,10 @@ const cardBase = preload("res://Cards/card.tscn")
 
 func _ready():
 	signal_bus.drawCard.connect(draw_cards)
+	signal_bus.calculateCardPositions.connect(set_card_positions)
 	card_pos_timer.timeout.connect(set_card_positions)
 	#draw_timer
-	signal_bus.drawCard.emit(23)
+	signal_bus.drawCard.emit(10)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -89,16 +90,16 @@ func set_card_positions():
 		var hand_ratio = get_card_hand_ratio(card)
 		var destination := hand_node.global_position
 		
-		if hand.size()< 4:
-			destination.x += horizontalCurve.sample(hand_ratio) * hand_size /2
+		if hand.size()<= 5:
+			destination.x += horizontalCurve.sample(hand_ratio) * hand_width * 0.2 * hand.size()
 		else:
-			destination.x += horizontalCurve.sample(hand_ratio) * hand_size
-		card.z_index = horizontalCurve.sample(hand_ratio) * 4
+			destination.x += horizontalCurve.sample(hand_ratio) * hand_width
+		var targetZ= horizontalCurve.sample(hand_ratio) * 4
+		var targetRot = calculate_card_rotation(card,hand_ratio)
 		destination += verticalCurve.sample(hand_ratio) * Vector2.UP* 50
-		#sets card height and horizontal
-		card.position = destination
-		set_card_rotation(card,hand_ratio)
+		signal_bus.positionCardInHand.emit(destination,targetRot,targetZ,card)
 		#print(card.position)
 
-func set_card_rotation(card,hand_ratio):
-	card.rotation = angleCurve.sample(hand_ratio) * -0.2
+func calculate_card_rotation(card,hand_ratio):
+	var targetRot = angleCurve.sample(hand_ratio) * -0.2
+	return targetRot

@@ -12,3 +12,6 @@ offset_left = -124.0
 offset_top = -174.0
 offset_right = 140.0
 offset_bottom = 176.0
+
+[connection signal="mouse_entered" from="CardBase" to="." method="_on_card_base_mouse_entered"]
+[connection signal="mouse_exited" from="CardBase" to="." method="_on_card_base_mouse_exited"]
