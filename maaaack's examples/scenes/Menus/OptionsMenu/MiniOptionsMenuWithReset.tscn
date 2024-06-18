@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgg2wvutowmtk"]
+
+[ext_resource type="PackedScene" path="res://maaaack's examples/scenes/Menus/OptionsMenu/MiniOptionsMenu.tscn" id="1_6ij6n"]
+[ext_resource type="Script" path="res://maaaack's examples/scenes/Menus/OptionsMenu/MiniOptionsMenuWithReset.gd" id="2_kmnc0"]
+[ext_resource type="PackedScene" path="res://maaaack's examples/scenes/Menus/OptionsMenu/Game/ResetGameControl/ResetGameControl.tscn" id="3_04hxe"]
+
+[node name="MiniOptionsMenu" instance=ExtResource("1_6ij6n")]
+script = ExtResource("2_kmnc0")
+
+[node name="ResetGameControl" parent="." index="3" instance=ExtResource("3_04hxe")]
+layout_mode = 2
+
+[connection signal="reset_confirmed" from="ResetGameControl" to="." method="_on_reset_game_control_reset_confirmed"]

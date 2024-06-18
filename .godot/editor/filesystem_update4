@@ -1,0 +1,8 @@
+res://game_handler.tscn
+res://card_handler.gd
+res://ui.tscn
+res://Assets/Prefabs/SignalBus.tscn
+res://Cards/card_base.tscn
+res://Cards/card.tscn
+res://Cards/cardGeneric.gd
+res://Scripts/signalBus.gd

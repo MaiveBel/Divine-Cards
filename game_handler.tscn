@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://p83vfak843kv"]
+
+[ext_resource type="Script" path="res://card_handler.gd" id="1_aamfg"]
+[ext_resource type="Texture2D" uid="uid://cjfg5t0imr2kn" path="res://icon.svg" id="2_ubnl5"]
+
+[sub_resource type="Curve" id="Curve_wxdcw"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 2.0, 0, 1, Vector2(1, 1), 2.0, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_htgt5"]
+min_value = -1.0
+max_value = 0.0
+_data = [Vector2(0, -1), 0.0, 2.0, 0, 1, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(0.994737, -1), -2.02128, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_bqyw5"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, -3.37051, 0, 0, Vector2(1, -1), -3.43439, 0.0, 0, 0]
+point_count = 2
+
+[node name="GameHandler" type="Node2D" node_paths=PackedStringArray("hand_node", "draw_timer", "card_pos_timer")]
+script = ExtResource("1_aamfg")
+hand_node = NodePath("HandNode")
+draw_timer = NodePath("DrawTimer")
+card_pos_timer = NodePath("CardPosTimer")
+hand_size = 200
+horizontalCurve = SubResource("Curve_wxdcw")
+verticalCurve = SubResource("Curve_htgt5")
+angleCurve = SubResource("Curve_bqyw5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HandNode" type="Node2D" parent="."]
+position = Vector2(0, 103.58)
+
+[node name="Sprite2D" type="Sprite2D" parent="HandNode"]
+z_index = -4096
+position = Vector2(2.00003, -2.57999)
+scale = Vector2(5.17188, 5.17188)
+texture = ExtResource("2_ubnl5")
+
+[node name="DrawTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CardPosTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true

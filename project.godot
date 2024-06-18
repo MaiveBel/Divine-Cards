@@ -10,6 +10,28 @@ config_version=5
 
 [application]
 
-config/name="Game Dev Projects"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/name="Divine-Cards"
+run/main_scene="res://maaaack's examples/scenes/Opening/OpeningWithLogo.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*res://Assets/Prefabs/SignalBus.tscn"
+AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
+SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
+ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
+ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
+
+[display]
+
+window/size/always_on_top=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg")
+
+[maaacks_game_template]
+
+disable_plugin_dialogues=true
+copy_path="res://maaaack's examples"

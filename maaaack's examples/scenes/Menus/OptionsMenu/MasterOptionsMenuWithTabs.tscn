@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://5pphtuokqd6s"]
+
+[ext_resource type="PackedScene" path="res://maaaack's examples/scenes/Menus/OptionsMenu/MasterOptionsMenu.tscn" id="1_1538e"]
+[ext_resource type="PackedScene" path="res://maaaack's examples/scenes/Menus/OptionsMenu/Input/InputOptionsMenuWithMouseSensitivity.tscn" id="2_o3faq"]
+[ext_resource type="PackedScene" path="res://maaaack's examples/scenes/Menus/OptionsMenu/Audio/AudioOptionsMenu.tscn" id="3_uh35d"]
+[ext_resource type="PackedScene" path="res://maaaack's examples/scenes/Menus/OptionsMenu/Video/VideoOptionsMenuWithExtras.tscn" id="4_2muxb"]
+[ext_resource type="PackedScene" path="res://maaaack's examples/scenes/Menus/OptionsMenu/Game/GameOptionsMenu.tscn" id="5_jp360"]
+
+[node name="MasterOptionsMenu" instance=ExtResource("1_1538e")]
+
+[node name="Controls" parent="TabContainer" index="1" instance=ExtResource("2_o3faq")]
+layout_mode = 2
+
+[node name="Audio" parent="TabContainer" index="2" instance=ExtResource("3_uh35d")]
+visible = false
+layout_mode = 2
+
+[node name="Video" parent="TabContainer" index="3" instance=ExtResource("4_2muxb")]
+visible = false
+layout_mode = 2
+
+[node name="Game" parent="TabContainer" index="4" instance=ExtResource("5_jp360")]
+visible = false
+layout_mode = 2
