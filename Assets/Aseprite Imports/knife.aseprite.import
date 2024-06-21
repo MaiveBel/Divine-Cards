@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://btaojtilcestl"
+path="res://.godot/imported/knife.aseprite-d94e13ec0a3329cb2a53266073e61247.res"
+
+[deps]
+
+source_file="res://Assets/Aseprite Imports/knife.aseprite"
+dest_files=["res://.godot/imported/knife.aseprite-d94e13ec0a3329cb2a53266073e61247.res"]
+
+[params]
+

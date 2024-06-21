@@ -10,3 +10,7 @@ res://Cards/cardGeneric.gd
 res://Assets/Prefabs/SignalBus.tscn
 res://Scripts/signalBus.gd
 res://card_handler.gd
+res://Cards/Card.gd
+res://Cards/Stab.tres
+res://Assets/font/Default Theme.tres
+res://Scripts/res_fix.gd

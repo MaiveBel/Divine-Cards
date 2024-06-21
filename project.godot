@@ -40,3 +40,7 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addon
 
 disable_plugin_dialogues=true
 copy_path="res://maaaack's examples"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
