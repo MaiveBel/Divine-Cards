@@ -30,13 +30,13 @@ verticalCurve = SubResource("Curve_htgt5")
 angleCurve = SubResource("Curve_bqyw5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="HandNode" type="Node2D" parent="."]
-position = Vector2(0, 103.58)
+position = Vector2(0, 320)
 
 [node name="Sprite2D" type="Sprite2D" parent="HandNode"]
 z_index = -4096
-position = Vector2(2.00003, -2.57999)
 scale = Vector2(5.17188, 5.17188)
 texture = ExtResource("2_ubnl5")
 

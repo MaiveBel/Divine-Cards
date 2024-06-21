@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://peh83evahn24"]
 
-[ext_resource type="PackedScene" path="res://maaaack's examples/scenes/Menus/MainMenu/MainMenu.tscn" id="1_tguu2"]
+[ext_resource type="PackedScene" uid="uid://c5ll5ubupj7ae" path="res://maaaack's examples/scenes/Menus/MainMenu/MainMenu.tscn" id="1_tguu2"]
 [ext_resource type="Script" path="res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.gd" id="2_fk8h5"]
 
 [sub_resource type="Animation" id="1"]
@@ -348,7 +348,9 @@ transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "Open
 graph_offset = Vector2(-180.277, 49)
 
 [node name="MainMenu" instance=ExtResource("1_tguu2")]
+texture_filter = 1
 script = ExtResource("2_fk8h5")
+game_scene_path = "res://game_handler.tscn"
 
 [node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -356,9 +358,15 @@ libraries = {
 }
 
 [node name="MenuAnimationTree" type="AnimationTree" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_2kqig")
+}
 tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
+
+[node name="BackgroundMusicPlayer" parent="." index="3"]
+bus = &"Master"
 
 [node name="VersionNameLabel" parent="." index="5"]
 modulate = Color(1, 1, 1, 0)

@@ -1,8 +1,12 @@
-res://game_handler.tscn
-res://card_handler.gd
-res://ui.tscn
-res://Assets/Prefabs/SignalBus.tscn
 res://Cards/card_base.tscn
+res://Cards/Punch.tres
+res://ui.tscn
+res://Cards/cardBase.gd
 res://Cards/card.tscn
+res://game_handler.tscn
+res://Cards/card_base_original.tscn
+res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.tscn
 res://Cards/cardGeneric.gd
+res://Assets/Prefabs/SignalBus.tscn
 res://Scripts/signalBus.gd
+res://card_handler.gd

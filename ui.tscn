@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://yqjxunqve347"]
 
-[ext_resource type="PackedScene" uid="uid://bgbrwbuatgdob" path="res://Cards/card_base.tscn" id="1_3g7j0"]
+[ext_resource type="PackedScene" uid="uid://bgbrwbuatgdob" path="res://Cards/card_base_original.tscn" id="1_3g7j0"]
 
 [node name="UI" type="CanvasLayer"]
 

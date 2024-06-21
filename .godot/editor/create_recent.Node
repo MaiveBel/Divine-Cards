@@ -1,7 +1,9 @@
+Label
+CollisionShape2D
+Area2D
 Sprite2D
 Timer
 Node2D
-Label
 MarginContainer
 CenterContainer
 HBoxContainer
@@ -10,4 +12,3 @@ Camera2D
 Node
 Panel
 CanvasLayer
-AnimationPlayer

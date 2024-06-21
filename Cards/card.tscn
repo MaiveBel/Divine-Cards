@@ -1,16 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp66t3ak55smc"]
 
 [ext_resource type="Script" path="res://Cards/cardGeneric.gd" id="1_ey8rh"]
-[ext_resource type="PackedScene" uid="uid://bgbrwbuatgdob" path="res://Cards/card_base.tscn" id="1_stp3p"]
+[ext_resource type="PackedScene" uid="uid://ck6bv2e6hdsf0" path="res://Cards/card_base.tscn" id="1_stp3p"]
 
 [node name="Card" type="Node2D" groups=["CardPosManager"]]
 script = ExtResource("1_ey8rh")
 
 [node name="CardBase" parent="." instance=ExtResource("1_stp3p")]
-offset_left = -124.0
-offset_top = -174.0
-offset_right = 140.0
-offset_bottom = 176.0
-
-[connection signal="mouse_entered" from="CardBase" to="." method="_on_card_base_mouse_entered"]
-[connection signal="mouse_exited" from="CardBase" to="." method="_on_card_base_mouse_exited"]

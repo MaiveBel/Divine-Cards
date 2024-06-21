@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="AttackCard" load_steps=4 format=3 uid="uid://d1xpx3hfwva0r"]
+[gd_resource type="Resource" script_class="AttackCard" load_steps=3 format=3 uid="uid://d1xpx3hfwva0r"]
 
-[ext_resource type="Texture2D" uid="uid://cvh4iensyu1rx" path="res://Assets/PlaceHolders/Cards/Card Borders etc/cardborder.png" id="1_7jpv6"]
+[ext_resource type="Texture2D" uid="uid://3hg3hh52pq3y" path="res://Cards/demo_border.png" id="1_3d41t"]
 [ext_resource type="Script" path="res://Cards/AttackCard.gd" id="2_djuox"]
-[ext_resource type="Texture2D" uid="uid://cbg2bjw4xhgkv" path="res://Assets/PlaceHolders/Cards/Units/Footman.png" id="2_vp2ey"]
 
 [resource]
 script = ExtResource("2_djuox")
@@ -13,6 +12,5 @@ type = ["Attack"]
 name = "Punch"
 time = 1
 range = 1
-image = ExtResource("2_vp2ey")
-borderImage = ExtResource("1_7jpv6")
+borderImage = ExtResource("1_3d41t")
 description = "ay lmao it broke"

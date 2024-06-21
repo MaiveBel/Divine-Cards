@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d2urrwiq4oj3s"
+path="res://.godot/imported/Demo-Border.aseprite-9789f4096e5af26fbc5651f3b0dab2dd.res"
+
+[deps]
+
+source_file="res://Assets/Aseprite Imports/Demo-Border.aseprite"
+dest_files=["res://.godot/imported/Demo-Border.aseprite-9789f4096e5af26fbc5651f3b0dab2dd.res"]
+
+[params]
+
