@@ -4,7 +4,7 @@ extends Node2D
 
 @export var cardInfo = Card
 @onready var cardBorder = $CardBorder
-@onready var cardBackground = $CardBackground
+@export var cardBackground := Sprite2D
 @onready var cardImage = $CardImage
 @onready var cardTime = $Time
 @onready var cardName = $Name

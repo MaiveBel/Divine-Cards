@@ -34,7 +34,7 @@ angleCurve = SubResource("Curve_bqyw5")
 zoom = Vector2(0.5, 0.5)
 
 [node name="HandNode" type="Node2D" parent="."]
-position = Vector2(0, 320)
+position = Vector2(0, 340)
 
 [node name="Sprite2D" type="Sprite2D" parent="HandNode"]
 z_index = -4096

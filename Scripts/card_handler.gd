@@ -60,7 +60,7 @@ func _ready():
 	signal_bus.calculateCardPositions.connect(set_card_positions)
 	card_pos_timer.timeout.connect(set_card_positions)
 	#draw_timer
-	signal_bus.drawCard.emit(5)
+	signal_bus.drawCard.emit(6)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -96,7 +96,7 @@ func set_card_positions():
 			#destination.x += horizontalCurve.sample(hand_ratio) * hand_width * 0.2 * clamp(hand.size(),1,10)
 		#else:
 			#destination.x += horizontalCurve.sample(hand_ratio) * hand_width
-		var targetZ= horizontalCurve.sample(hand_ratio) * 4
+		var targetZ= horizontalCurve.sample(hand_ratio) * 1
 		var targetRot = calculate_card_rotation(card,hand_ratio)
 		destination += verticalCurve.sample(hand_ratio) * Vector2.UP* hand_height
 		signal_bus.positionCardInHand.emit(destination,targetRot,targetZ,card)

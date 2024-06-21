@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cfwsrw45giowa" path="res://Cards/demo_background.png" id="4_26qqa"]
 [ext_resource type="Theme" uid="uid://djig1nebh5wyw" path="res://Assets/font/Default Theme.tres" id="6_5r5x2"]
 
-[node name="CardBase" type="Node2D"]
+[node name="CardBase" type="Node2D" node_paths=PackedStringArray("cardBackground")]
 script = ExtResource("1_skjqp")
 cardInfo = ExtResource("2_m3n35")
+cardBackground = NodePath("CardImage/CardBackground")
 
 [node name="CardBorder" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -34,29 +35,6 @@ metadata/_aseprite_wizard_interface_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "90a227c88a9b62fddd181f3979edabc0"
 
-[node name="CardBackground" type="Sprite2D" parent="."]
-z_index = -1
-texture_filter = 1
-position = Vector2(0, -80)
-scale = Vector2(8, 8)
-texture = ExtResource("4_26qqa")
-metadata/_aseprite_wizard_config_ = {
-"i_mode": 1,
-"keep_anim_length": false,
-"layer": "",
-"o_ex_p": "",
-"o_folder": "res://Cards",
-"o_name": "demo_background",
-"only_visible": false,
-"player": "",
-"slice": "",
-"source": "res://Assets/Aseprite Imports/background.aseprite"
-}
-metadata/_aseprite_wizard_interface_config_ = {
-"output_section": true
-}
-metadata/_aseprite_wizard_source_file_hash_ = "3dd3f0d903a15317f0c5bf4f7adca540"
-
 [node name="CardImage" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -80)
@@ -78,6 +56,27 @@ metadata/_aseprite_wizard_interface_config_ = {
 "output_section": true
 }
 metadata/_aseprite_wizard_source_file_hash_ = "0ff2d965731d0942e2edecff22de2a9b"
+
+[node name="CardBackground" type="Sprite2D" parent="CardImage"]
+show_behind_parent = true
+texture_filter = 1
+texture = ExtResource("4_26qqa")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Cards",
+"o_name": "demo_background",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://Assets/Aseprite Imports/background.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3dd3f0d903a15317f0c5bf4f7adca540"
 
 [node name="Time" type="Label" parent="."]
 offset_left = -130.0
