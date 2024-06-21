@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ck6bv2e6hdsf0"]
 
 [ext_resource type="Script" path="res://Cards/cardBase.gd" id="1_skjqp"]
-[ext_resource type="Texture2D" uid="uid://3hg3hh52pq3y" path="res://Cards/demo_border.png" id="2_jcof4"]
 [ext_resource type="Resource" uid="uid://cjmff3lycm2cw" path="res://Cards/Stab.tres" id="2_m3n35"]
 [ext_resource type="Texture2D" uid="uid://bqkb0bpxicgko" path="res://Cards/knife.png" id="3_0sgtv"]
+[ext_resource type="Texture2D" uid="uid://3hg3hh52pq3y" path="res://Cards/demo_border.png" id="3_sy7gu"]
 [ext_resource type="Texture2D" uid="uid://cfwsrw45giowa" path="res://Cards/demo_background.png" id="4_26qqa"]
 [ext_resource type="Theme" uid="uid://djig1nebh5wyw" path="res://Assets/font/Default Theme.tres" id="6_5r5x2"]
 
@@ -14,23 +14,25 @@ cardInfo = ExtResource("2_m3n35")
 [node name="CardBorder" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(8, 8)
-texture = ExtResource("2_jcof4")
+texture = ExtResource("3_sy7gu")
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,
 "keep_anim_length": false,
 "layer": "",
 "o_ex_p": "",
 "o_folder": "res://Cards",
-"o_name": "demo_border",
+"o_name": "demo_border_2x",
 "only_visible": false,
 "player": "",
 "slice": "",
-"source": "res://Assets/Aseprite Imports/Demo-Border.aseprite"
+"source": "res://Assets/Aseprite Imports/Demo-Border_2x.aseprite"
 }
 metadata/_aseprite_wizard_interface_config_ = {
-"output_section": true
+"layer_section": false,
+"output_section": true,
+"slice_section": false
 }
-metadata/_aseprite_wizard_source_file_hash_ = "5767f542889692d4521586cb807489e0"
+metadata/_aseprite_wizard_source_file_hash_ = "90a227c88a9b62fddd181f3979edabc0"
 
 [node name="CardBackground" type="Sprite2D" parent="."]
 z_index = -1
@@ -96,7 +98,6 @@ text = "0"
 
 [node name="Name" type="Label" parent="."]
 custom_minimum_size = Vector2(200, 24)
-anchors_preset = -1
 offset_left = -100.0
 offset_top = -185.0
 offset_right = 100.0
@@ -123,7 +124,6 @@ offset_top = 38.0
 offset_right = 123.0
 offset_bottom = 175.0
 theme = ExtResource("6_5r5x2")
-theme_override_font_sizes/font_size = 32
 text = "aiuhgiogidg 7sdfsdfuh sd7uhuniu"
 horizontal_alignment = 1
 autowrap_mode = 2

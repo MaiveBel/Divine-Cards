@@ -18,7 +18,7 @@ func position_card_in_hand(targetPos: Vector2,targetRot,targetZ,targetCard):
 	if targetCard == self && !hovered && !selected:
 		self.position = targetPos
 		self.z_index = targetZ
-		self.rotation = targetRot
+		#self.rotation = targetRot
 		print(self.position.y)
 
 
@@ -35,6 +35,6 @@ func _on_card_base_mouse_entered():
 func _on_card_base_mouse_exited():
 	
 	hovered = false
-	scale = Vector2(1,1)
+	#scale = Vector2(0.5,1)
 	signal_bus.calculateCardPositions.emit()
 

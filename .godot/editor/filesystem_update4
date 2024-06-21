@@ -1,16 +1,11 @@
-res://Cards/card_base.tscn
-res://Cards/Punch.tres
-res://ui.tscn
-res://Cards/cardBase.gd
-res://Cards/card.tscn
 res://game_handler.tscn
-res://Cards/card_base_original.tscn
-res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.tscn
-res://Cards/cardGeneric.gd
-res://Assets/Prefabs/SignalBus.tscn
-res://Scripts/signalBus.gd
-res://card_handler.gd
-res://Cards/Card.gd
 res://Cards/Stab.tres
 res://Assets/font/Default Theme.tres
-res://Scripts/res_fix.gd
+res://Cards/card_base.tscn
+res://ui.tscn
+res://Cards/card.tscn
+res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.tscn
+res://Assets/Prefabs/SignalBus.tscn
+res://Scripts/card_handler.gd
+res://Cards/cardGeneric.gd
+res://Cards/cardBase.gd

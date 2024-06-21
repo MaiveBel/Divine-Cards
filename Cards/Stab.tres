@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="AttackCard" load_steps=5 format=3 uid="uid://cjmff3lycm2cw"]
 
-[ext_resource type="Texture2D" uid="uid://3hg3hh52pq3y" path="res://Cards/demo_border.png" id="1_40x5c"]
 [ext_resource type="Texture2D" uid="uid://cfwsrw45giowa" path="res://Cards/demo_background.png" id="1_m5pko"]
 [ext_resource type="Script" path="res://Cards/AttackCard.gd" id="1_n4gj5"]
 [ext_resource type="Texture2D" uid="uid://bqkb0bpxicgko" path="res://Cards/knife.png" id="2_b1oa3"]
+[ext_resource type="Texture2D" uid="uid://3hg3hh52pq3y" path="res://Cards/demo_border.png" id="2_vdhy3"]
 
 [resource]
 script = ExtResource("1_n4gj5")
@@ -15,6 +15,6 @@ name = "Stab"
 time = 1
 range = 3
 image = ExtResource("2_b1oa3")
-borderImage = ExtResource("1_40x5c")
+borderImage = ExtResource("2_vdhy3")
 backgroundImage = ExtResource("1_m5pko")
 description = "so anyway i started stabbing"

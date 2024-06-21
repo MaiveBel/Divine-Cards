@@ -8,6 +8,7 @@ const cardBase = preload("res://Cards/card.tscn")
 @export var card_pos_timer:Timer
 
 @export var hand_width = 250
+@export var hand_height = 56
 
 #draw size
 @export var drawSize = 5
@@ -97,7 +98,7 @@ func set_card_positions():
 			#destination.x += horizontalCurve.sample(hand_ratio) * hand_width
 		var targetZ= horizontalCurve.sample(hand_ratio) * 4
 		var targetRot = calculate_card_rotation(card,hand_ratio)
-		destination += verticalCurve.sample(hand_ratio) * Vector2.UP* 50
+		destination += verticalCurve.sample(hand_ratio) * Vector2.UP* hand_height
 		signal_bus.positionCardInHand.emit(destination,targetRot,targetZ,card)
 		#print(card.position)
 
