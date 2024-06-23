@@ -6,23 +6,27 @@
 [node name="Card" type="Node2D" groups=["CardPosManager"]]
 script = ExtResource("1_ey8rh")
 
-[node name="DetectionContainer" type="MarginContainer" parent="."]
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(288, 384)
-layout_direction = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -90.5
-offset_top = -120.5
-offset_right = 90.5
-offset_bottom = 120.5
+offset_left = -144.0
+offset_top = -192.0
+offset_right = 144.0
+offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
+action_mode = 0
 
-[node name="CardBase" parent="DetectionContainer" instance=ExtResource("1_stp3p")]
+[node name="CardBase" parent="Button" instance=ExtResource("1_stp3p")]
+show_behind_parent = true
 position = Vector2(144, 192)
 
-[connection signal="mouse_entered" from="DetectionContainer" to="." method="_on_card_base_mouse_entered"]
-[connection signal="mouse_exited" from="DetectionContainer" to="." method="_on_card_base_mouse_exited"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

@@ -1,3 +1,5 @@
+AnimationPlayer
+Button
 MarginContainer
 Label
 CollisionShape2D
@@ -11,4 +13,3 @@ VBoxContainer
 Camera2D
 Node
 Panel
-CanvasLayer
