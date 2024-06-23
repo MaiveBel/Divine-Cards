@@ -7,3 +7,5 @@ res://ui.tscn
 res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.tscn
 res://Cards/card_base.tscn
 res://Assets/Prefabs/SignalBus.tscn
+res://Scripts/signalBus.gd
+res://Scripts/card_handler.gd

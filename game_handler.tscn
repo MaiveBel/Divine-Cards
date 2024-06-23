@@ -20,9 +20,10 @@ min_value = -1.0
 _data = [Vector2(0, 1), 0.0, -3.37051, 0, 0, Vector2(1, -1), -3.43439, 0.0, 0, 0]
 point_count = 2
 
-[node name="GameHandler" type="Node2D" node_paths=PackedStringArray("hand_node", "draw_timer", "card_pos_timer")]
+[node name="GameHandler" type="Node2D" node_paths=PackedStringArray("hand_node", "card_holder", "draw_timer", "card_pos_timer")]
 script = ExtResource("1_aamfg")
 hand_node = NodePath("HandNode")
+card_holder = NodePath("")
 draw_timer = NodePath("DrawTimer")
 card_pos_timer = NodePath("CardPosTimer")
 hand_width = 280

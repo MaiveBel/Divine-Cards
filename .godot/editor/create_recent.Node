@@ -1,3 +1,4 @@
+Node
 AnimationPlayer
 Button
 MarginContainer
@@ -11,5 +12,3 @@ CenterContainer
 HBoxContainer
 VBoxContainer
 Camera2D
-Node
-Panel
