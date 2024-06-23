@@ -2,3 +2,8 @@ res://game_handler.tscn
 res://Cards/Stab.tres
 res://Assets/font/Default Theme.tres
 res://Cards/card.tscn
+res://Cards/cardGeneric.gd
+res://ui.tscn
+res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.tscn
+res://Cards/card_base.tscn
+res://Assets/Prefabs/SignalBus.tscn
