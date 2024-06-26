@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ck6bv2e6hdsf0" path="res://Cards/card_base.tscn" id="1_stp3p"]
 
 [node name="Card" type="Node2D" groups=["CardPosManager"]]
+texture_filter = 1
 script = ExtResource("1_ey8rh")
 
 [node name="Button" type="Button" parent="."]

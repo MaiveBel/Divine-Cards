@@ -27,11 +27,13 @@ func position_card_in_hand(targetPos: Vector2,targetRot,targetZ,targetCard):
 	if targetCard == self && !cardHovered && !cardSelected:
 		posInHand = targetPos
 		var tween = create_tween()
-		tween.tween_property(self, "position", posInHand,animDuration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		
+		tween.tween_property(self, "position", posInHand,animDuration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 		tween.play()
 		self.z_index = targetZ
 		#self.rotation = targetRot
-		print(self.position.y)
+		await tween.finished
+
 
 func _on_button_mouse_entered():
 	if !cardSelected:
@@ -41,10 +43,11 @@ func hovered():
 	if !cardHovered:
 		cardHovered = true
 		var final_pos = Vector2 (posInHand.x,-384 + vMoveOnSelect)
+		self.rotation = 0
+		
 		var tween = create_tween()
 		tween.tween_property(self, "position", final_pos,animDuration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 		tween.play()
-		self.rotation = 0
 		self.z_index = 1000
 		signal_bus.calculateCardPositions.emit()
 		signal_bus.disableCards.emit(self)

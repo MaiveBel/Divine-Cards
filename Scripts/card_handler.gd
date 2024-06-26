@@ -64,7 +64,7 @@ func _ready():
 	signal_bus.selectedCard.connect(on_card_selected)
 	card_pos_timer.timeout.connect(set_card_positions)
 	#draw_timer
-	signal_bus.drawCard.emit(5)
+	signal_bus.drawCard.emit(10)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -83,7 +83,7 @@ func draw_cards(cardsToDraw: int) -> void:
 		newCard.indexInHand = hand.find(newCard)
 		set_card_positions()
 	signal_bus.enableCards.emit()
-	set_card_positions()
+	#set_card_positions()
 
 #TODO make hand array a RESOURCE array instead of NODE2D
 
@@ -95,6 +95,7 @@ func get_card_hand_ratio(card) -> float:
 	return hand_ratio
 
 func set_card_positions():
+	print("test")
 	for card in hand:
 		var hand_ratio = get_card_hand_ratio(card)
 		var destination := hand_node.global_position
@@ -106,7 +107,7 @@ func set_card_positions():
 			#destination.x += horizontalCurve.sample(hand_ratio) * hand_width
 		var targetZ= horizontalCurve.sample(hand_ratio) * 1
 		var targetRot = calculate_card_rotation(card,hand_ratio)
-		#destination += verticalCurve.sample(hand_ratio) * Vector2.UP* hand_height
+		destination += verticalCurve.sample(hand_ratio) * Vector2.UP* hand_height
 		signal_bus.positionCardInHand.emit(destination,targetRot,targetZ,card)
 		#print(card.position)
 

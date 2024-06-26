@@ -1,13 +1,13 @@
 6dcd580d9bf2a9dbe66cc9f994d3620b
-::res://::1719129968
+::res://::1719410465
 CONTRIBUTING.md::TextFile::-1::1717702333::0::1::::<><>::
-game_handler.tscn::PackedScene::1122694961040298769::1719048804::0::1::::<><>::res://Scripts/card_handler.gd<>uid://cjfg5t0imr2kn::::res://icon.svg
+game_handler.tscn::PackedScene::1122694961040298769::1719142698::0::1::::<><>::res://Scripts/card_handler.gd<>uid://c7kiin2n1rixu::::res://Cards/demo_border_2x.png
 icon.svg::CompressedTexture2D::5415281761616520405::1717701690::1717701701::1::::<><>::
 MonkCardDB.gd::GDScript::-1::1718364927::0::1::::<>RefCounted<>::
 override.cfg::TextFile::-1::1717702483::0::1::::<><>::
 README.md::TextFile::-1::1717702333::0::1::::<><>::
 READMECN.md::TextFile::-1::1717702333::0::1::::<><>::
-ui.tscn::PackedScene::1718150888877125146::1719048803::0::1::::<><>::uid://bgbrwbuatgdob::::res://Cards/card_base_original.tscn
+ui.tscn::PackedScene::1718150888877125146::1719141964::0::1::::<><>::uid://bgbrwbuatgdob::::res://Cards/card_base_original.tscn
 ::res://addons/::1717702402
 ::res://addons/AsepriteWizard/::1717702403
 plugin.cfg::TextFile::-1::1717702403::0::1::::<><>::
@@ -273,7 +273,7 @@ CopyConfirmationDialog.tscn::PackedScene::6506630939107533720::1717702377::0::1:
 DestinationDialog.tscn::PackedScene::5524076666757777413::1717702377::0::1::::<><>::
 MainSceneConfirmationDialog.tscn::PackedScene::4724379791679470970::1717702377::0::1::::<><>::
 override.cfg::TextFile::-1::1717702377::0::1::::<><>::
-::res://addons/Todo_Manager/::1719129967
+::res://addons/Todo_Manager/::1719410465
 ColourPicker.gd::GDScript::-1::1717702333::0::1::::<>HBoxContainer<>::
 Current.gd::GDScript::-1::1717702334::0::1::::<>Panel<>::
 Dock.gd::GDScript::-1::1717702334::0::1::::<>Control<>::
@@ -281,7 +281,7 @@ Pattern.gd::GDScript::-1::1717702334::0::1::::<>HBoxContainer<>::
 plugin.cfg::TextFile::-1::1717702334::0::1::::<><>::
 plugin.gd::GDScript::-1::1717702334::0::1::::<>EditorPlugin<>::
 Project.gd::GDScript::-1::1717702334::0::1::::<>Panel<>::
-todo.cfg::TextFile::-1::1719129967::0::1::::<><>::
+todo.cfg::TextFile::-1::1719410465::0::1::::<><>::
 todoItem_class.gd::GDScript::-1::1717702334::0::1::::<>RefCounted<>::
 todo_class.gd::GDScript::-1::1717702334::0::1::::<>RefCounted<>::
 ::res://addons/Todo_Manager/doc/::1717702334
@@ -305,8 +305,8 @@ background.aseprite::PackedDataContainer::4101444234919767511::1718985481::17189
 Demo-Border.aseprite::PackedDataContainer::9096712100399206830::1718989085::1718989059::1::::<><>::
 Demo-Border_2x.aseprite::PackedDataContainer::2741228512516162524::1718993917::1718993920::1::::<><>::
 knife.aseprite::PackedDataContainer::3720875833664319993::1718985388::1718985391::1::::<><>::
-::res://Assets/font/::1719046114
-Default Theme.tres::Theme::7807888087490963614::1719046114::0::1::::<><>::uid://bprhljmixhx60::::res://Assets/font/Perfect DOS VGA 437 Win.ttf
+::res://Assets/font/::1719142698
+Default Theme.tres::Theme::7807888087490963614::1719142698::0::1::::<><>::uid://bprhljmixhx60::::res://Assets/font/Perfect DOS VGA 437 Win.ttf
 KiwiSoda.ttf::FontFile::6344418492670924841::1718988857::1718988857::1::::<><>::
 Perfect DOS VGA 437 Win.ttf::FontFile::3474792914407248315::1718987981::1718988014::1::::<><>::
 ::res://Assets/PlaceHolders/::1718368318
@@ -338,22 +338,22 @@ Comfortaa-Bold.ttf::FontFile::1356902403317389560::1718368318::1718368318::1::::
 background shade.png::CompressedTexture2D::462534829730226589::1718368318::1718368318::1::::<><>::
 CardBase1.png::CompressedTexture2D::1198419120013805171::1718368318::1718368318::1::::<><>::
 CardBase2.png::CompressedTexture2D::6943567345174220278::1718368318::1718368318::1::::<><>::
-::res://Assets/Prefabs/::1719048804
-SignalBus.tscn::PackedScene::6047844974271998190::1719048804::0::1::::<><>::res://Scripts/signalBus.gd
-::res://Cards/::1719048804
+::res://Assets/Prefabs/::1719141965
+SignalBus.tscn::PackedScene::6047844974271998190::1719141965::0::1::::<><>::res://Scripts/signalBus.gd
+::res://Cards/::1719142698
 AttackCard.gd::GDScript::-1::1718367364::0::1::::AttackCard<>Card<>::
 Card.gd::GDScript::-1::1718984857::0::1::::Card<>Resource<>::
-card.tscn::PackedScene::5891587360341943026::1719048804::0::1::::<><>::res://Cards/cardGeneric.gd<>uid://ck6bv2e6hdsf0::::res://Cards/card_base.tscn
+card.tscn::PackedScene::5891587360341943026::1719141964::0::1::::<><>::res://Cards/cardGeneric.gd<>uid://ck6bv2e6hdsf0::::res://Cards/card_base.tscn
 cardBase.gd::GDScript::-1::1718999778::0::1::::<>Node2D<>::
-cardGeneric.gd::GDScript::-1::1719046219::0::1::::Card_Positioner<>Node2D<>::
-card_base.tscn::PackedScene::5538825158534811251::1719048804::0::1::::<><>::res://Cards/cardBase.gd<>uid://cjmff3lycm2cw::::res://Cards/Stab.tres<>uid://bqkb0bpxicgko::::res://Cards/knife.png<>uid://3hg3hh52pq3y::::res://Cards/demo_border.png<>uid://cfwsrw45giowa::::res://Cards/demo_background.png<>uid://djig1nebh5wyw::::res://Assets/font/Default Theme.tres
+cardGeneric.gd::GDScript::-1::1719141045::0::1::::Card_Positioner<>Node2D<>::
+card_base.tscn::PackedScene::5538825158534811251::1719141965::0::1::::<><>::res://Cards/cardBase.gd<>uid://cjmff3lycm2cw::::res://Cards/Stab.tres<>uid://bqkb0bpxicgko::::res://Cards/knife.png<>uid://3hg3hh52pq3y::::res://Cards/demo_border.png<>uid://cfwsrw45giowa::::res://Cards/demo_background.png<>uid://djig1nebh5wyw::::res://Assets/font/Default Theme.tres
 card_base_original.tscn::PackedScene::2810689683063361353::1718981590::0::1::::<><>::uid://tlj8p5muar1a::::res://Assets/PlaceHolders/font/Comfortaa-Bold.ttf<>res://Cards/cardBase.gd<>uid://3hg3hh52pq3y::::res://Cards/demo_border.png
 demo_background.png::CompressedTexture2D::5170326362216302020::1718985806::1718985806::1::::<><>::
 demo_border.png::CompressedTexture2D::1980152950206095800::1718989100::1718989100::1::::<><>::
 demo_border_2x.png::CompressedTexture2D::7040028888776561610::1718993969::1718993969::1::::<><>::
 knife.png::CompressedTexture2D::3530191398033813546::1718985602::1718985602::1::::<><>::
 Punch.tres::Resource/Resource::9032605983887667275::1718983510::0::1::::<><>::uid://3hg3hh52pq3y::::res://Cards/demo_border.png<>res://Cards/AttackCard.gd
-Stab.tres::Resource/AttackCard::5429627495850846086::1719046114::0::1::::<><>::uid://cfwsrw45giowa::::res://Cards/demo_background.png<>res://Cards/AttackCard.gd<>uid://bqkb0bpxicgko::::res://Cards/knife.png<>uid://3hg3hh52pq3y::::res://Cards/demo_border.png
+Stab.tres::Resource/AttackCard::5429627495850846086::1719142698::0::1::::<><>::uid://cfwsrw45giowa::::res://Cards/demo_background.png<>res://Cards/AttackCard.gd<>uid://bqkb0bpxicgko::::res://Cards/knife.png<>uid://3hg3hh52pq3y::::res://Cards/demo_border.png
 ::res://maaaack's examples/::1717702481
 ATTRIBUTION.md::TextFile::-1::1717702481::0::1::::<><>::
 ::res://maaaack's examples/assets/::1717702481
@@ -386,11 +386,11 @@ QuadMeshPlaceholder.tscn::PackedScene::2729045105787094529::1717702482::0::1::::
 LoseScreen.gd::GDScript::-1::1717702482::0::1::::<>CanvasLayer<>::
 LoseScreen.tscn::PackedScene::450895322568324799::1717702482::0::1::::<><>::uid://cp3p3kqcjh0me::::res://addons/maaacks_game_template/extras/scenes/LoseScreen/LoseScreen.tscn<>res://addons/maaacks_game_template/examples/scenes/LoseScreen/LoseScreen.gd
 ::res://maaaack's examples/scenes/Menus/::1717702482
-::res://maaaack's examples/scenes/Menus/MainMenu/::1719048804
+::res://maaaack's examples/scenes/Menus/MainMenu/::1719141965
 MainMenu.gd::GDScript::-1::1717702482::0::1::::<>MainMenu<>::
 MainMenu.tscn::PackedScene::6901937345500360700::1717702482::0::1::::<><>::uid://c6k5nnpbypshi::::res://addons/maaacks_game_template/base/scenes/Menus/MainMenu/MainMenu.tscn<>uid://bdvdf5v87mmrr::::res://addons/maaacks_game_template/examples/scenes/Menus/OptionsMenu/MasterOptionsMenuWithTabs.tscn<>uid://c1g50h2avck3w::::res://addons/maaacks_game_template/examples/scenes/Credits/Credits.tscn
 MainMenuWithAnimations.gd::GDScript::-1::1717702482::0::1::::<>MainMenu<>::
-MainMenuWithAnimations.tscn::PackedScene::1061575593522408383::1719048804::0::1::::<><>::uid://c5ll5ubupj7ae::::res://maaaack's examples/scenes/Menus/MainMenu/MainMenu.tscn<>res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.gd
+MainMenuWithAnimations.tscn::PackedScene::1061575593522408383::1719141965::0::1::::<><>::uid://c5ll5ubupj7ae::::res://maaaack's examples/scenes/Menus/MainMenu/MainMenu.tscn<>res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.gd
 ::res://maaaack's examples/scenes/Menus/OptionsMenu/::1717702482
 MasterOptionsMenu.gd::GDScript::-1::1717702482::0::1::::<>Control<>::
 MasterOptionsMenu.tscn::PackedScene::864712517451774898::1717702482::0::1::::<><>::uid://bvwl11s2p0hd::::res://addons/maaacks_game_template/base/scenes/Menus/OptionsMenu/MasterOptionsMenu.tscn<>res://addons/maaacks_game_template/examples/scenes/Menus/OptionsMenu/MasterOptionsMenu.gd
@@ -426,6 +426,6 @@ OpeningWithLogo.tscn::PackedScene::4311005009680224533::1717702483::0::1::::<><>
 ::res://maaaack's examples/scenes/WinScreen/::1717702483
 WinScreen.gd::GDScript::-1::1717702483::0::1::::<>CanvasLayer<>::
 WinScreen.tscn::PackedScene::934846797326114461::1717702483::0::1::::<><>::uid://dt5ses55itjy4::::res://addons/maaacks_game_template/extras/scenes/WinScreen/WinScreen.tscn<>res://addons/maaacks_game_template/examples/scenes/WinScreen/WinScreen.gd
-::res://Scripts/::1718999982
-card_handler.gd::GDScript::-1::1718999982::0::1::::<>Node2D<>::
-signalBus.gd::GDScript::-1::1718984075::0::1::::<>Node2D<>::
+::res://Scripts/::1719141471
+card_handler.gd::GDScript::-1::1719141471::0::1::::<>Node2D<>::
+signalBus.gd::GDScript::-1::1719139969::0::1::::<>Node2D<>::
