@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cvnt7k6ftaako"
+path="res://.godot/imported/critter_wolf.aseprite-9c25c0a2132808913adf4cc12dc81784.res"
+
+[deps]
+
+source_file="res://Assets/PlaceHolders/critters/aseprite files/critter_wolf.aseprite"
+dest_files=["res://.godot/imported/critter_wolf.aseprite-9c25c0a2132808913adf4cc12dc81784.res"]
+
+[params]
+

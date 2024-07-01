@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c11fph3drjmsi"
+path="res://.godot/imported/tile_outline.aseprite-024b467307c4993a3955f263c918d8c8.res"
+
+[deps]
+
+source_file="res://Assets/Aseprite Imports/tile_outline.aseprite"
+dest_files=["res://.godot/imported/tile_outline.aseprite-024b467307c4993a3955f263c918d8c8.res"]
+
+[params]
+

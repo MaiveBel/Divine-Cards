@@ -42,7 +42,7 @@ func _on_button_mouse_entered():
 func hovered():
 	if !cardHovered:
 		cardHovered = true
-		var final_pos = Vector2 (posInHand.x,-384 + vMoveOnSelect)
+		var final_pos = Vector2 (posInHand.x,posInHand.y - vMoveOnSelect)
 		self.rotation = 0
 		
 		var tween = create_tween()

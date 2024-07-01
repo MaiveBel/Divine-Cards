@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b23ydddgitcdm"
+path="res://.godot/imported/critter_stag.aseprite-934a66246507b33765332ee4ec5fa1ca.res"
+
+[deps]
+
+source_file="res://Assets/PlaceHolders/critters/aseprite files/critter_stag.aseprite"
+dest_files=["res://.godot/imported/critter_stag.aseprite-934a66246507b33765332ee4ec5fa1ca.res"]
+
+[params]
+

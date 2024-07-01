@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @onready var signal_bus = get_node("/root/SignalBus")
 const cardBase = preload("res://Cards/card.tscn")
@@ -58,13 +58,14 @@ var selected_cards = []
 @export var angleCurve: Curve
 
 func _ready():
+	hand_node = get_tree().get_first_node_in_group("HandNode")
 	signal_bus.drawCard.connect(draw_cards)
 	signal_bus.calculateCardPositions.connect(set_card_positions)
 	signal_bus.putCardBackInHand.connect(put_card_back_in_hand)
 	signal_bus.selectedCard.connect(on_card_selected)
 	card_pos_timer.timeout.connect(set_card_positions)
 	#draw_timer
-	signal_bus.drawCard.emit(10)
+	signal_bus.drawCard.emit(drawSize)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -95,10 +96,10 @@ func get_card_hand_ratio(card) -> float:
 	return hand_ratio
 
 func set_card_positions():
-	print("test")
 	for card in hand:
 		var hand_ratio = get_card_hand_ratio(card)
-		var destination := hand_node.global_position
+		var destination := hand_node.position
+		destination.x = 0
 		destination.y = 0
 		destination.x += horizontalCurve.sample(hand_ratio) * hand_width * 0.2 * clamp(hand_node.get_child_count()- selected_cards.size(),1,7)
 		#if hand_node.get_child_count()<= 5:

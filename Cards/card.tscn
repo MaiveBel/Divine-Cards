@@ -5,7 +5,9 @@
 
 [node name="Card" type="Node2D" groups=["CardPosManager"]]
 texture_filter = 1
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ey8rh")
+vMoveOnSelect = 104
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)

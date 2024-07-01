@@ -350,7 +350,7 @@ graph_offset = Vector2(-180.277, 49)
 [node name="MainMenu" instance=ExtResource("1_tguu2")]
 texture_filter = 1
 script = ExtResource("2_fk8h5")
-game_scene_path = "res://game_handler.tscn"
+game_scene_path = "res://Assets/Prefabs/game.tscn"
 
 [node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 libraries = {
