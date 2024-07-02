@@ -1057,5 +1057,6 @@ layer_6/z_index = 1
 layer_6/navigation_enabled = false
 layer_6/tile_data = PackedInt32Array()
 script = ExtResource("5_i6hqu")
+multiHighlight = null
 
 [node name="Camera2D" type="Camera2D" parent="."]

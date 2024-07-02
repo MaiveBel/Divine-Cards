@@ -19,9 +19,8 @@ min_value = -1.0
 _data = [Vector2(0, 1), 0.0, -3.37051, 0, 0, Vector2(1, -1), -3.43439, 0.0, 0, 0]
 point_count = 2
 
-[node name="GameHandler" type="Node" node_paths=PackedStringArray("hand_node", "draw_timer", "card_pos_timer")]
+[node name="GameHandler" type="Node" node_paths=PackedStringArray("draw_timer", "card_pos_timer")]
 script = ExtResource("1_aamfg")
-hand_node = NodePath("")
 draw_timer = NodePath("DrawTimer")
 card_pos_timer = NodePath("CardPosTimer")
 hand_width = 160
@@ -36,5 +35,5 @@ wait_time = 0.5
 one_shot = true
 
 [node name="CardPosTimer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
+wait_time = 0.2
+one_shot = true

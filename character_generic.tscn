@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://csstatee7fsl4"]
+
+[ext_resource type="Texture2D" uid="uid://cyx56c67vkh6e" path="res://Assets/PlaceHolders/critters/wolf/no effects/wolf-idle.png" id="1_05thi"]
+[ext_resource type="Script" path="res://Health Node.gd" id="2_s3gfr"]
+[ext_resource type="Script" path="res://Movement Node.gd" id="3_02i7p"]
+
+[node name="Entity" type="Area2D"]
+collision_layer = 6
+collision_mask = 12
+
+[node name="Target Tile Checker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Target Tile Checker"]
+polygon = PackedVector2Array(0, 8, -16, 0, 0, -8, 16, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_05thi")
+hframes = 4
+vframes = 4
+
+[node name="Health Node" type="Node" parent="." node_paths=PackedStringArray("status_manager")]
+script = ExtResource("2_s3gfr")
+status_manager = NodePath("../Status Manager")
+
+[node name="Movement Node" type="Node" parent="." node_paths=PackedStringArray("tile_checker", "parent")]
+script = ExtResource("3_02i7p")
+tile_checker = NodePath("../Target Tile Checker")
+parent = NodePath("..")
+
+[node name="Status Manager" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 8, -16, 0, 0, -8, 16, 0)

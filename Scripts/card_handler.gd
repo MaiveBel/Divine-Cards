@@ -64,7 +64,6 @@ func _ready():
 	signal_bus.putCardBackInHand.connect(put_card_back_in_hand)
 	signal_bus.selectedCard.connect(on_card_selected)
 	card_pos_timer.timeout.connect(set_card_positions)
-	#draw_timer
 	signal_bus.drawCard.emit(drawSize)
 
 
@@ -74,7 +73,7 @@ func _process(delta):
 
 
 func draw_cards(cardsToDraw: int) -> void:
-	signal_bus.disableCards.emit()
+	#signal_bus.disableCards.emit()
 	for card in cardsToDraw:
 		draw_timer.start()
 		await draw_timer.timeout
@@ -83,7 +82,7 @@ func draw_cards(cardsToDraw: int) -> void:
 		hand.append(newCard)
 		newCard.indexInHand = hand.find(newCard)
 		set_card_positions()
-	signal_bus.enableCards.emit()
+	#signal_bus.enableCards.emit()
 	#set_card_positions()
 
 #TODO make hand array a RESOURCE array instead of NODE2D
@@ -123,11 +122,15 @@ func on_card_selected(card,index):
 	set_card_positions()
 
 func put_card_back_in_hand(card,index):
+	card_pos_timer.start()
 	selected_cards.erase(card)
 	hand.insert(index,card)
 	for card2 in hand:
 		card2.indexInHand = hand.find(card2)
 	set_card_positions()
+	await card_pos_timer.timeout
+	signal_bus.enableCards.emit()
+
 
 
 

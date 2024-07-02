@@ -10,12 +10,15 @@ var cardSelected = false
 @export var unhoverable = false
 var posInHand = Vector2(0,0)
 var indexInHand = 0
+var currentSelectedCards = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	signal_bus.positionCardInHand.connect(position_card_in_hand)
 	signal_bus.disableCards.connect(disable)
 	signal_bus.enableCards.connect(enable)
+	signal_bus.selectedCard.connect(on_card_selected)
+	signal_bus.putCardBackInHand.connect(on_card_deselected)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +28,7 @@ func _process(delta):
 
 func position_card_in_hand(targetPos: Vector2,targetRot,targetZ,targetCard):
 	if targetCard == self && !cardHovered && !cardSelected:
+		disable(null)
 		posInHand = targetPos
 		var tween = create_tween()
 		
@@ -33,6 +37,7 @@ func position_card_in_hand(targetPos: Vector2,targetRot,targetZ,targetCard):
 		self.z_index = targetZ
 		#self.rotation = targetRot
 		await tween.finished
+		enable()
 
 
 func _on_button_mouse_entered():
@@ -62,9 +67,10 @@ func unhovered():
 	signal_bus.calculateCardPositions.emit()
 	signal_bus.enableCards.emit()
 	
+	
 
-func disable(card):
-	if card != self:
+func disable(excludedCard):
+	if excludedCard != self:
 		unhoverable = true
 		$Button.hide()
 
@@ -76,7 +82,7 @@ func enable():
 func _on_button_gui_input(event):
 	if (event is InputEventMouseButton) and (event.button_index == 1):
 		if event.button_mask == 1:
-			if cardHovered:
+			if cardHovered && currentSelectedCards.size() < 1:
 				signal_bus.selectedCard.emit(self,indexInHand)
 				cardHovered = false
 				followMouse = true
@@ -85,5 +91,12 @@ func _on_button_gui_input(event):
 		elif event.button_mask == 0:
 			followMouse = false
 			cardSelected = false
+			cardHovered = false
 			signal_bus.putCardBackInHand.emit(self,indexInHand)
+			
 
+func on_card_selected(card,index):
+	currentSelectedCards.append(card)
+
+func on_card_deselected(card,index):
+	currentSelectedCards.erase(card)
