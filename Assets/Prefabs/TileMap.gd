@@ -3,8 +3,8 @@ extends TileMap
 @onready var signal_bus = get_node("/root/SignalBus")
 var dic = {}
 @export var multiHighlight = false
-var SelectedTileGlobal
-var SelectedTile
+var SelectedTilesGlobal = []
+var SelectedTiles = []
 
 enum layers{
 	Ground1 = 0,
@@ -27,7 +27,10 @@ func _ready():
 func _process(delta):
 	if !multiHighlight:
 		clear_layer(layers.Selection)
-	highlight_tile(get_moused_over_tile())
+		SelectedTiles.clear()
+		SelectedTilesGlobal.clear()
+		highlight_tile(get_moused_over_tile())
+	
 
 func get_moused_over_tile():
 	var tile = local_to_map(to_local(get_global_mouse_position()))
@@ -35,15 +38,16 @@ func get_moused_over_tile():
 
 func highlight_tile(tile):
 	set_cell(layers.Selection,tile,1,Vector2i.ZERO)
-	SelectedTile = tile
-	SelectedTileGlobal = map_to_local(to_global(tile))
+	SelectedTiles.append(tile)
+	SelectedTilesGlobal.append(map_to_local(to_global(tile)))
 
 func update_dictionary(layer):
 	for tile in get_used_cells(layer):
-		dic[str(tile)+ str(layer)] = {
+		dic[[tile,layer]] = {
 			"Type": "Grass",
 			"Layer": layer,
 			"Walkthrough": false
 		}
-		print(str(tile)+ str(layer))
+		
 	
+

@@ -1,14 +1,14 @@
 res://Assets/Prefabs/game.tscn
-res://Cards/Stab.tres
 res://Assets/font/Default Theme.tres
-res://Assets/Prefabs/TileMap.gd
-res://Player.tscn
+res://Assets/Prefabs/SignalBus.tscn
 res://Movement Node.gd
-res://Player.gd
+res://Scripts/signalBus.gd
+res://Player.tscn
 res://ui.tscn
 res://game_handler.tscn
 res://Cards/card.tscn
 res://maaaack's examples/scenes/Menus/MainMenu/MainMenuWithAnimations.tscn
 res://Cards/card_base.tscn
-res://Assets/Prefabs/SignalBus.tscn
+res://character_generic.tscn
 res://entity_spawner.tscn
+res://Player.gd

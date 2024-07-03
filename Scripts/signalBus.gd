@@ -16,12 +16,7 @@ signal calculateCardPositions()
 #character, new ammount,old ammount
 signal hpChanged(health_node: Node,new_ammount: int,old_ammount :int)
 
-
-
-var entities = {}
-
-func add_entity(entity):
-	entities.append(entity)
-
-func erase_entity(entity):
-	entities.erase(entity)
+var entityDic = {Vector2i.ZERO: ["entity","ghost"],
+"entity": {"position" : Vector2i.ZERO,"positionGlobal" : Vector2.ZERO},
+"ghost": {"position" : Vector2i.ZERO,"positionGlobal" : Vector2.ZERO},
+}

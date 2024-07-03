@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bex75oisckpm5"]
+
+[ext_resource type="Script" path="res://Movement Node.gd" id="1_asrys"]
+
+[node name="Movement Node" type="Node2D" node_paths=PackedStringArray("tile_checker", "parent")]
+script = ExtResource("1_asrys")
+tile_checker = NodePath("")
+parent = NodePath("")

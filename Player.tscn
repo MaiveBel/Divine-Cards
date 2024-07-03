@@ -1,36 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8mfuvbmjqlgn"]
+[gd_scene load_steps=6 format=3 uid="uid://b8mfuvbmjqlgn"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_5p7te"]
 [ext_resource type="Texture2D" uid="uid://cyx56c67vkh6e" path="res://Assets/PlaceHolders/critters/wolf/no effects/wolf-idle.png" id="1_dyaj7"]
-[ext_resource type="Script" path="res://Health Node.gd" id="2_r3iyn"]
-[ext_resource type="Script" path="res://Movement Node.gd" id="3_wajce"]
+[ext_resource type="PackedScene" uid="uid://dgr232avvnua0" path="res://target_tile_entity_checker.tscn" id="2_fxwhl"]
+[ext_resource type="PackedScene" uid="uid://dojwr73r4asrw" path="res://health_node.tscn" id="4_phxym"]
+[ext_resource type="PackedScene" uid="uid://bex75oisckpm5" path="res://movement_node.tscn" id="5_y5lfs"]
 
 [node name="Entity" type="Area2D" groups=["Player"]]
-z_index = 3
+z_index = 1
+y_sort_enabled = true
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("1_5p7te")
 
-[node name="Target Tile Checker" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Target Tile Checker"]
-polygon = PackedVector2Array(0, 8, -16, 0, 0, -8, 16, 0)
+[node name="Target Tile Entity Checker" parent="." instance=ExtResource("2_fxwhl")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, 7)
 texture = ExtResource("1_dyaj7")
+offset = Vector2(-1, -16)
 hframes = 4
 vframes = 4
 
-[node name="Health Node" type="Node" parent="." node_paths=PackedStringArray("status_manager")]
-script = ExtResource("2_r3iyn")
+[node name="Health Node" parent="." node_paths=PackedStringArray("status_manager") instance=ExtResource("4_phxym")]
 status_manager = NodePath("../Status Manager")
 
-[node name="Movement Node" type="Node" parent="." node_paths=PackedStringArray("tile_checker", "parent")]
-script = ExtResource("3_wajce")
-tile_checker = NodePath("../Target Tile Checker")
+[node name="Movement Node" parent="." node_paths=PackedStringArray("tile_checker", "parent") instance=ExtResource("5_y5lfs")]
+tile_checker = NodePath("../Target Tile Entity Checker")
 parent = NodePath("..")
 
 [node name="Status Manager" type="Node" parent="."]
@@ -38,4 +34,5 @@ parent = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.9, 0.9)
 polygon = PackedVector2Array(0, 8, -16, 0, 0, -8, 16, 0)
