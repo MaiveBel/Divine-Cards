@@ -6,6 +6,7 @@ extends Node2D
 
 var targetPosClear = true
 var posInTile = Vector2i.ZERO
+var ghostly = false
 
 signal just_moved(new_pos)
 
@@ -14,6 +15,7 @@ func _ready():
 	get_tile_map()
 	tile_checker.area_entered.connect(_on_tile_checker_area_entered)
 	center_on_tile()
+	update_pos_in_tile_coords()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,7 +33,13 @@ func move_to(targetPos,TargetPosGlobal):
 
 func checkPos(targetPos,TargetPosGlobal):
 	targetPosClear = true
-	tile_checker.global_position = TargetPosGlobal
+	#tile_checker.global_position = TargetPosGlobal
+	if signal_bus.entityDic.has(targetPos):
+		var tile_entities = signal_bus.entityDic.get(targetPos)
+		for each in tile_entities:
+			if each.is_in_group('Unwalkable') && !ghostly:
+				print(each)
+				targetPosClear = false
 	if tileMap.dic.has([targetPos,5]):
 		targetPosClear = false
 		print(tileMap.dic[[targetPos,5]])

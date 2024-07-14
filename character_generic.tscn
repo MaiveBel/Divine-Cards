@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dojwr73r4asrw" path="res://health_node.tscn" id="3_n8cdi"]
 [ext_resource type="PackedScene" uid="uid://bex75oisckpm5" path="res://movement_node.tscn" id="4_aiqgc"]
 
-[node name="Entity" type="Area2D"]
+[node name="Entity" type="Area2D" groups=["Unwalkable"]]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 6
