@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var signal_bus = get_node("/root/SignalBus")
 
+
 @export var cardInfo = Card
 @onready var cardBorder = $CardBorder
 @export var cardBackground := Sprite2D
@@ -11,7 +12,6 @@ extends Node2D
 @onready var cardType = $Type
 @onready var cardRange = $Range
 @onready var cardDescription = $Description
-
 
 
 

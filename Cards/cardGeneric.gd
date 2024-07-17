@@ -2,6 +2,7 @@ extends Node2D
 class_name Card_Positioner
 
 @onready var signal_bus = get_node("/root/SignalBus")
+@onready var tileMap = get_tree().get_first_node_in_group("TileMap")
 var followMouse = false 
 var cardHovered = false
 var cardSelected = false
@@ -82,21 +83,46 @@ func enable():
 func _on_button_gui_input(event):
 	if (event is InputEventMouseButton) and (event.button_index == 1):
 		if event.button_mask == 1:
-			if cardHovered && currentSelectedCards.size() < 1:
+			if !cardSelected && currentSelectedCards.size() < 1 && cardHovered:
 				signal_bus.selectedCard.emit(self,indexInHand)
 				cardHovered = false
-				followMouse = true
+				#followMouse = true
 				cardSelected = true
-				
+				self.position.x = 0
+			elif cardSelected && currentSelectedCards.size() == 1:
+				print("deselected")
+				followMouse = false
+				cardSelected = false
+				cardHovered = false
+				signal_bus.putCardBackInHand.emit(self,indexInHand)
+				self.scale = Vector2(0.5,0.5)
 		elif event.button_mask == 0:
-			followMouse = false
-			cardSelected = false
-			cardHovered = false
-			signal_bus.putCardBackInHand.emit(self,indexInHand)
+			if cardSelected:
+				pass
 			
+
+func _unhandled_input(event):
+	if (event is InputEventMouseButton) and (event.button_index == 1):
+		if event.button_mask == 1:
+			if cardSelected:
+				print("played1")
+				select_target(get_global_mouse_position())
 
 func on_card_selected(card,index):
 	currentSelectedCards.append(card)
 
 func on_card_deselected(card,index):
 	currentSelectedCards.erase(card)
+
+func play(target):
+	$CardBase.cardInfo.Play(target)
+
+func select_target(globalPos):
+	var selectedPos = tileMap.local_to_map(to_local(globalPos))
+	print(signal_bus.entityDic)
+	if signal_bus.entityDic.has(selectedPos):
+		print("played2")
+		for each in signal_bus.entityDic.get(selectedPos):
+			print("played3")
+			play(each)
+

@@ -20,11 +20,11 @@ func _process(delta):
 #TODO remake this into on card played
 func _unhandled_input(event):
 	if Input.is_action_pressed("LeftClick"):
-		if !movement_node.tileMap.multiHighlight:
-			movement_node.move_to(movement_node.tileMap.SelectedTiles[0],movement_node.tileMap.SelectedTilesGlobal[0])
-		else:
-			movement_node.tileMap.highlight_tile(movement_node.tileMap.get_moused_over_tile())
-		
+		#if !movement_node.tileMap.multiHighlight:
+		#	movement_node.move_to(movement_node.tileMap.SelectedTiles[0])
+		#else:
+		#	movement_node.tileMap.highlight_tile(movement_node.tileMap.get_moused_over_tile())
+		pass
 	if event.is_action_pressed("RightClick"):
 		movement_node.tileMap.multiHighlight = !movement_node.tileMap.multiHighlight
 		

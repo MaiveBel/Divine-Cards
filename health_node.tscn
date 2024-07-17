@@ -2,6 +2,5 @@
 
 [ext_resource type="Script" path="res://Health Node.gd" id="1_qhwxs"]
 
-[node name="Health Node" type="Node" node_paths=PackedStringArray("status_manager")]
+[node name="Health Node" type="Node" groups=["Health_Node"]]
 script = ExtResource("1_qhwxs")
-status_manager = NodePath("")

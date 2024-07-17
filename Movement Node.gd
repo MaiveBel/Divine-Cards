@@ -1,6 +1,6 @@
 extends Node2D
 @onready var signal_bus = get_node("/root/SignalBus")
-@export var tile_checker: Area2D
+
 @export var parent: Node2D = null
 @export var tileMap: TileMap
 
@@ -13,7 +13,6 @@ signal just_moved(new_pos)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tile_map()
-	tile_checker.area_entered.connect(_on_tile_checker_area_entered)
 	center_on_tile()
 	update_pos_in_tile_coords()
 
@@ -22,16 +21,17 @@ func _ready():
 func _process(delta):
 	pass
 
-func move_to(targetPos,TargetPosGlobal):
-	checkPos(targetPos,TargetPosGlobal)
+func move_to(targetPos):
+	checkPos(targetPos)
 	await get_tree().create_timer(0.05).timeout
 	if targetPosClear:
-		parent.global_position = TargetPosGlobal
+		parent.global_position = (tileMap.map_to_local(targetPos))
 		update_pos_in_tile_coords()
 		just_moved.emit(posInTile)
-	tile_checker.position = Vector2.ZERO
+		print_debug(str(parent.global_position))
 
-func checkPos(targetPos,TargetPosGlobal):
+
+func checkPos(targetPos):
 	targetPosClear = true
 	#tile_checker.global_position = TargetPosGlobal
 	if signal_bus.entityDic.has(targetPos):
@@ -47,10 +47,6 @@ func checkPos(targetPos,TargetPosGlobal):
 func get_tile_map():
 	tileMap = get_tree().get_first_node_in_group("TileMap")
 
-func _on_tile_checker_area_entered(area):
-	targetPosClear = false
-	print("entity spotted: ", area)
-
 func update_pos_in_tile_coords():
 	if signal_bus.entityDic.has(posInTile):
 		signal_bus.entityDic.get(posInTile).erase(parent)
@@ -62,7 +58,9 @@ func update_pos_in_tile_coords():
 
 func center_on_tile():
 	#assert(parent.global_position != null,"orphaned movement node"+ str(self.global_position))
-	parent.global_position = tileMap.local_to_map(to_local(parent.global_position))
+	#this bring the position into map then back to center itself
+	print_debug(str(parent.global_position)+ ' to ' + str(to_global(tileMap.map_to_local(tileMap.local_to_map(to_local(parent.global_position))))))
+	parent.global_position = to_global(tileMap.map_to_local(tileMap.local_to_map(to_local(parent.global_position))))
 
 
 

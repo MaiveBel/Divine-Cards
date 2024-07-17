@@ -14,6 +14,7 @@ type = ["Skill"]
 name = "Move"
 time = 1
 range = 3
+specialEffects = Array[Array]([["Effect", 1]])
 image = ExtResource("4_skmfb")
 borderImage = ExtResource("3_sy7gu")
 backgroundImage = ExtResource("4_dba6y")

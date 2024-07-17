@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp66t3ak55smc"]
+[gd_scene load_steps=4 format=3 uid="uid://cp66t3ak55smc"]
 
 [ext_resource type="Script" path="res://Cards/cardGeneric.gd" id="1_ey8rh"]
 [ext_resource type="PackedScene" uid="uid://ck6bv2e6hdsf0" path="res://Cards/card_base.tscn" id="1_stp3p"]
+[ext_resource type="Resource" uid="uid://cjmff3lycm2cw" path="res://Cards/card resources/Stab.tres" id="3_nyxsq"]
 
 [node name="Card" type="Node2D" groups=["CardPosManager"]]
 texture_filter = 1
@@ -27,6 +28,7 @@ action_mode = 0
 
 [node name="CardBase" parent="." instance=ExtResource("1_stp3p")]
 show_behind_parent = true
+cardInfo = ExtResource("3_nyxsq")
 
 [connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]

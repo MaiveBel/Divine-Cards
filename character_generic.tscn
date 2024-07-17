@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://csstatee7fsl4"]
+[gd_scene load_steps=4 format=3 uid="uid://csstatee7fsl4"]
 
 [ext_resource type="Texture2D" uid="uid://cyx56c67vkh6e" path="res://Assets/PlaceHolders/critters/wolf/no effects/wolf-idle.png" id="1_05thi"]
-[ext_resource type="PackedScene" uid="uid://dgr232avvnua0" path="res://target_tile_entity_checker.tscn" id="2_g2xhr"]
 [ext_resource type="PackedScene" uid="uid://dojwr73r4asrw" path="res://health_node.tscn" id="3_n8cdi"]
 [ext_resource type="PackedScene" uid="uid://bex75oisckpm5" path="res://movement_node.tscn" id="4_aiqgc"]
 
@@ -11,12 +10,10 @@ y_sort_enabled = true
 collision_layer = 6
 collision_mask = 12
 
-[node name="Target Tile Entity Checker" parent="." instance=ExtResource("2_g2xhr")]
-
 [node name="Health Node" parent="." instance=ExtResource("3_n8cdi")]
+unique_name_in_owner = true
 
-[node name="Movement Node" parent="." node_paths=PackedStringArray("tile_checker", "parent") instance=ExtResource("4_aiqgc")]
-tile_checker = NodePath("../Target Tile Entity Checker")
+[node name="Movement Node" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_aiqgc")]
 parent = NodePath("..")
 
 [node name="Status Manager" type="Node" parent="."]
